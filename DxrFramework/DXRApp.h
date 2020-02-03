@@ -66,7 +66,10 @@ namespace DXR
 		static void Run(SimpleDXRApp& applicaton, const std::string& winTitle, ui32t width = 1920, ui32t height = 1200);
 	};
 
-
+	/*
+		this code will follow the following code structure
+		https://docs.microsoft.com/en-us/windows/win32/direct3d12/creating-a-basic-direct3d-12-component
+	*/
 	class DXRApp : public SimpleDXRApp 
 	{
 	public:
@@ -78,6 +81,8 @@ namespace DXR
 		void InitDXR(HWND winHandle, ui32t winWidth, ui32t winHeight);
 		ui32t BeginFrame();
 		void EndFrame(ui32t rtvIndex);
+
+	private:
 
 		HWND mHwnd = nullptr;
 		ID3D12Device5Ptr mpDevice;
